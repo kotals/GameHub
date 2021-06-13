@@ -22,8 +22,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Modaly = ({ handleClose, open, trailer }) => {
+
   const classes = useStyles();
-  console.log(trailer);
+
   return (
     <div>
       <Modal
@@ -40,9 +41,7 @@ const Modaly = ({ handleClose, open, trailer }) => {
       >
         <Fade in={open}>
           <iframe src={trailer.data.max} style={{ margin: ' 0 0 20px -32px' }} width="900" height="500" >
-            
           </iframe>
-
         </Fade>
       </Modal>
     </div>

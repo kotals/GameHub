@@ -18,29 +18,25 @@ const Main = () => {
 
   const [input, setInput] = useState('')
   const currentGame = useSelector(state => state)
-  console.log(input.replace(' ', '-'));
   const [loading, setLoading] = useState(true)
   const [page, setPage] = useState(1)
-  
+
   const dispatch = useDispatch()
   const classes = useStyles();
-const history = useHistory()
+  const history = useHistory()
   const submitHandler = (e) => {
     e.preventDefault()
-    console.log(123);
     if (input !== '') {
-      
       dispatch(thunkCurrentGames(input.replace(' ', '-')))
-      
       history.push(`/search/${input}`)
       setInput('')
     }
   }
 
   useEffect(() => {
-        setLoading(true)
+    setLoading(true)
     dispatch(thunkAllGames(page))
-        setLoading(false)
+    setLoading(false)
   }, [page])
 
   const inputHandler = (e) => {
@@ -64,12 +60,8 @@ const history = useHistory()
             />
           </div>
           <button onClick={submitHandler}>OK</button>
-          {/* <Link to={`/search/${input}`}  ><button onClick={submitHandler}>OK</button></Link> */}
-          
         </form>
         <hr />
-
-
 
         {loading ? <div className='loading'>
           <p>l</p>
@@ -83,17 +75,14 @@ const history = useHistory()
           ''
         }
 
-
-
         <Switch>
-          <Route exact path='/'>
-
-            <GameList  setPage ={setPage} />
+          <Route exact path='/GameHub'>
+            <GameList setPage={setPage} />
           </Route>
-          <Route exact path='/search/:currentGam' >
+          <Route exact path='/GameHub/search/:currentGam' >
             <GameFromSearch />
           </Route>
-          <Route exact path='/:id' >
+          <Route exact path='/GameHub/:id' >
             <GameFromMenu />
           </Route>
         </Switch>

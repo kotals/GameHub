@@ -44,7 +44,7 @@ function Header() {
               <MenuIcon />
             </IconButton>
             <Typography className={classes.title} variant="h6"  noWrap>
-               <Link style={{color:'white'}} to='/'>Video-Games</Link>
+               <Link style={{color:'white'}} to='/GameHub'>Video-Games</Link>
               
           </Typography>
             <Button className={classes.button} onClick={signHandler} variant="contained" color={signCheck ? 'secondary' : 'primary'} >{ }{signCheck ? 'Выйти' : 'Войти'}</Button>
