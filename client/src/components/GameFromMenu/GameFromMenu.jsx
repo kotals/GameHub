@@ -1,34 +1,26 @@
 import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { useParams } from 'react-router'
 import Modaly from '../Modal/Modal'
 import './GameFromMenu.css'
 const GameFromMenu = () => {
-  const { id } = useParams()
-  const [game, setGame] = useState({})
+  const {id} = useParams()
   const [trailer, setTrailer] = useState({})
+const game = useSelector(state => state.games.currentgame)
 
-  // useEffect(() => {
-  //   (async () => {
-  //     // setLoading(true)
-  //     const response = await fetch(`https://api.rawg.io/api/games/${id}?key=e930d30eb04b4962b85aa272f2925b23`)
-  //     const serverResponse = await response.json()
-  //     console.log('GAAAMMEEEE', serverResponse);
-  //     setGame(serverResponse)
-  //     // setLoading(false)
-  //   })()
-  // }, [])
+const [loading, setLoading] = useState(false)
 
 
-  // useEffect(() => {
-  //   (async () => {
-  //     // setLoading(true)
-  //     const response = await fetch(`https://api.rawg.io/api/games/${id}/movies?key=e930d30eb04b4962b85aa272f2925b23`)
-  //     const serverResponse = await response.json()
-  //     console.log('trailer', serverResponse);
-  //     setTrailer(serverResponse)
-  //     // setLoading(false)
-  //   })()
-  // }, [game])
+  useEffect(() => {
+    (async () => {
+      setLoading(true)
+      const response = await fetch(`https://api.rawg.io/api/games/${id}/movies?key=e930d30eb04b4962b85aa272f2925b23`)
+      const serverResponse = await response.json()
+      console.log('trailer', serverResponse);
+      setTrailer(serverResponse)
+      setLoading(false)
+    })()
+  }, [game])
 
   const [open, setOpen] = React.useState(false);
 
@@ -51,28 +43,27 @@ const GameFromMenu = () => {
               <p>Платформы:{game.platforms?.map(el => <span> /{el.platform.name}</span>)}</p>
               <p>Дата релиза: {game.released}</p>
               <p>Жанр: {game.genres?.map(el => <span> /{el.name}</span>)}</p>
-              {/* <p>Разработчик: {game?.developers[0]?.name}</p> */}
-              {/* <p>Издатель/дистрибьютор: {game?.publishers?[0]?.name}</p> */}
+              {/* <p>Разработчик: {game?.developers[0]?.name}</p> 
+              <p>Издатель/дистрибьютор: {game?.publishers?[0]?.name}</p>  */}
               <p>Сайт: <a href={game.website}>{game.website}</a></p>
               <p></p>
               <p></p>
               <p></p>
-              <p>описание :{game.description_raw}</p>
+              <p>описание :{game.description_raw}</p> 
 
-              {/* {
+              {
                 trailer.results?.length
                   ?
                   trailer.results?.map(el => <> <button type="button" onClick={handleOpen}>trailer</button>  <Modaly trailer={el} open={open} handleClose={handleClose} /> </>)
-                  // <a href={el.data.max}><button type="button" onClick={handleOpen}>trailer</button></a>
                   :
                   ''
-              } */}
-            </div>
+              } 
+            </div> 
             <div></div>
-          </div>
-        </div>
+          </div> 
+        </div> 
 
-      </div>
+      </div> 
 
 
 

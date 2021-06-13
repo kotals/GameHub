@@ -8,7 +8,7 @@ const GameList = ({ setPage }) => {
   const games = useSelector(state=>state.games.allgames)
   return (
     <>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
+      <div style={{ display: 'flex', justifyContent: 'center',flexWrap:'wrap' }}>
         {games?.results?.map((el, inx) => <span key={inx} style={{ margin: '0 15px', cursor: 'pointer' }} onClick={() => setPage(inx+1)}>{inx + 1}</span>)}
       </div>
 

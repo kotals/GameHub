@@ -1,7 +1,7 @@
 import { InputBase } from '@material-ui/core'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { thunkAllGames, thunkCurrentGames } from '../../redux/actions/loaderAction'
+import { thunkAllGames, thunkCurrentGames } from '../../redux/actions/gamesAction'
 import GameList from '../GameList/GameList'
 import './Main.css'
 import '../Header/Header.styles'
@@ -9,6 +9,7 @@ import useStyles from '../Header/Header.styles'
 import { Route, Link, Switch, useHistory } from 'react-router-dom'
 import GameFromSearch from '../GameFromSearch/GameFromSearch'
 import GameFromMenu from '../GameFromMenu/GameFromMenu'
+import { Button } from '@material-ui/core';
 
 
 
@@ -18,12 +19,13 @@ const Main = () => {
 
   const [input, setInput] = useState('')
   const currentGame = useSelector(state => state)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [page, setPage] = useState(1)
 
   const dispatch = useDispatch()
   const classes = useStyles();
   const history = useHistory()
+
   const submitHandler = (e) => {
     e.preventDefault()
     if (input !== '') {
@@ -59,7 +61,10 @@ const Main = () => {
               inputProps={{ 'aria-label': 'search' }}
             />
           </div>
-          <button onClick={submitHandler}>OK</button>
+          <Button onClick={submitHandler} variant="contained" color="secondary">
+            OK
+          </Button>
+          {/* <button onClick={submitHandler}>OK</button> */}
         </form>
         <hr />
 
@@ -76,7 +81,7 @@ const Main = () => {
         }
 
         <Switch>
-          <Route exact path='/'>
+          <Route exact path='/GameHub'>
             <GameList setPage={setPage} />
           </Route>
           <Route exact path='/search/:currentGam' >
