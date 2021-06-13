@@ -79,7 +79,7 @@ const Main = () => {
           <Route exact path='/GameHub'>
             <GameList setPage={setPage} />
           </Route>
-          <Route exact path='/GameHub/search/:currentGam' >
+          <Route exact path='/search/:currentGam' >
             <GameFromSearch />
           </Route>
           <Route exact path='/GameHub/:id' >
