@@ -4,17 +4,11 @@ import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 
 const GameFromSearch = () => {
-
-  const { currentGam } = useParams()
-
   const currentGame = useSelector(state => state.games.currentgame)
-  console.log(currentGame);
   const [loading, setLoading] = useState(false)
 
   console.log(currentGame, 'currentGame');
-  // console.log(https://api.rawg.io/api/games?search=${ga}&key=e930d30eb04b4962b85aa272f2925b23);
 
-  https://api.rawg.io/api/games/gta/game-series?key=e930d30eb04b4962b85aa272f2925b23
 
   // const handleOpen = () => {
   //   setOpen(true);
@@ -31,10 +25,10 @@ const GameFromSearch = () => {
         <div className='content-game'>
           <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             <div style={{ margin: '0 25px' }}>
-              <h1>{currentGame.name} <span><img width='26px' src='https://e7.pngegg.com/pngimages/641/241/png-clipart-gold-sticker-star-star-angle-triangle.png' alt="" /></span></h1>
-              <p>Платформы:{currentGame.platforms?.map(el => <span> /{el.platform.name}</span>)}</p>
+              <h1>{currentGame.name}</h1>
+              <p>Платформы:{currentGame.platforms?.map((el,indx) => <span key={indx} > /{el.platform.name}</span>)}</p>
               <p>Дата релиза: {currentGame.released}</p>
-              <p>Жанр: {currentGame.genres?.map(el => <span> /{el.name}</span>)}</p>
+              <p>Жанр: {currentGame.genres?.map((el,indx)=> <span key={indx} >  /{el.name}</span>)}</p>
               {/* <p>Разработчик: {game?.developers[0]?.name}</p> */}
               {/* <p>Издатель/дистрибьютор: {game?.publishers?[0]?.name}</p> */}
               <p>Сайт: <a href={currentGame.website}>{currentGame.website}</a></p>

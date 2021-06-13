@@ -5,7 +5,7 @@ import Main from './components/Main/Main';
 
 function App() {
 
-const signIn = useSelector(state=>state.signIn)
+  const signIn = useSelector(state => state.signIn)
 
 
 
@@ -13,14 +13,14 @@ const signIn = useSelector(state=>state.signIn)
     <div className="App">
       <Header />
       {
-      signIn
-      ?
-
-      <Main/>
-      
-      :
-      'пшел вон'
-    }
+        signIn
+          ?
+          <Main />
+          :
+          <h2 style={{ display: 'flex', justifyContent: 'center',margin:'20px 45px' }}>
+            Добро пожаловать! Выполните вход.
+          </h2>
+      }
     </div>
   );
 }
