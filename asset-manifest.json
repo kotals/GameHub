@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/GameHub/static/css/main.4ace5aff.chunk.css",
+    "main.css": "/GameHub/static/css/main.24f858f5.chunk.css",
     "main.js": "/GameHub/static/js/main.2ce63b63.chunk.js",
     "main.js.map": "/GameHub/static/js/main.2ce63b63.chunk.js.map",
     "runtime-main.js": "/GameHub/static/js/runtime-main.c3edf56e.js",
@@ -8,13 +8,13 @@
     "static/js/2.addd87f3.chunk.js": "/GameHub/static/js/2.addd87f3.chunk.js",
     "static/js/2.addd87f3.chunk.js.map": "/GameHub/static/js/2.addd87f3.chunk.js.map",
     "index.html": "/GameHub/index.html",
-    "static/css/main.4ace5aff.chunk.css.map": "/GameHub/static/css/main.4ace5aff.chunk.css.map",
+    "static/css/main.24f858f5.chunk.css.map": "/GameHub/static/css/main.24f858f5.chunk.css.map",
     "static/js/2.addd87f3.chunk.js.LICENSE.txt": "/GameHub/static/js/2.addd87f3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c3edf56e.js",
     "static/js/2.addd87f3.chunk.js",
-    "static/css/main.4ace5aff.chunk.css",
+    "static/css/main.24f858f5.chunk.css",
     "static/js/main.2ce63b63.chunk.js"
   ]
 }
