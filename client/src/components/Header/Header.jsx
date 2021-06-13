@@ -43,7 +43,7 @@ function Header() {
             >
               <MenuIcon />
             </IconButton>
-            <Typography className={classes.title} variant="h6"  noWrap>
+            <Typography className={classes.title} variant="h6"  wrap>
                <Link style={{color:'white'}} to='/GameHub'>Video-Games</Link>
               
           </Typography>

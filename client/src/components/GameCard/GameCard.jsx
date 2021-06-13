@@ -1,10 +1,20 @@
 import './GameCard.scss'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux';
-
+import { useDispatch,useSelector } from 'react-redux';
+import { thunkCurrentGames } from "../../redux/actions/gamesAction.js";
 
 const GameCard = ({ info }) => {
+
+const dispatch = useDispatch()
+
   const gameS = useSelector(state => state)
+
+  const submitHandler = () => {
+      dispatch(thunkCurrentGames(info.slug)) 
+    }
+
+
+
   return (
     <figure className="image-block">
       <h1 style={{ position: 'relative' }}>{info.name}</h1>
@@ -20,7 +30,7 @@ const GameCard = ({ info }) => {
 
         </div >
         <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
-        <Link to={`/GameHub/${info.id}`}><button>Подробнее...</button></Link>
+        <Link to={`/${info.id}`}><button onClick={submitHandler}  >Подробнее...</button></Link>
       </figcaption>
     </figure>
   )
