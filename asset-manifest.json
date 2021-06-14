@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/GameHub/static/css/main.133674ce.chunk.css",
-    "main.js": "/GameHub/static/js/main.2ce63b63.chunk.js",
-    "main.js.map": "/GameHub/static/js/main.2ce63b63.chunk.js.map",
+    "main.css": "/GameHub/static/css/main.a8024929.chunk.css",
+    "main.js": "/GameHub/static/js/main.6f88b700.chunk.js",
+    "main.js.map": "/GameHub/static/js/main.6f88b700.chunk.js.map",
     "runtime-main.js": "/GameHub/static/js/runtime-main.c3edf56e.js",
     "runtime-main.js.map": "/GameHub/static/js/runtime-main.c3edf56e.js.map",
     "static/js/2.addd87f3.chunk.js": "/GameHub/static/js/2.addd87f3.chunk.js",
     "static/js/2.addd87f3.chunk.js.map": "/GameHub/static/js/2.addd87f3.chunk.js.map",
     "index.html": "/GameHub/index.html",
-    "static/css/main.133674ce.chunk.css.map": "/GameHub/static/css/main.133674ce.chunk.css.map",
+    "static/css/main.a8024929.chunk.css.map": "/GameHub/static/css/main.a8024929.chunk.css.map",
     "static/js/2.addd87f3.chunk.js.LICENSE.txt": "/GameHub/static/js/2.addd87f3.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c3edf56e.js",
     "static/js/2.addd87f3.chunk.js",
-    "static/css/main.133674ce.chunk.css",
-    "static/js/main.2ce63b63.chunk.js"
+    "static/css/main.a8024929.chunk.css",
+    "static/js/main.6f88b700.chunk.js"
   ]
 }
